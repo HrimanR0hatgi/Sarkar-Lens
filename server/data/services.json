@@ -1,0 +1,58 @@
+[
+  {
+    "id":"aadhaar-address-update","name":"Aadhaar Address Update","description":"Update the address associated with Aadhaar after a residential move.","life_events":["moving"],
+    "conditions":[{"fact":"destination","op":"exists"}],
+    "documents":["Valid proof of address","Aadhaar details"],
+    "steps":["Open the official UIDAI Aadhaar update service.","Sign in using the supported authentication flow.","Submit the new address with valid supporting proof.","Save the service request acknowledgement and track the request."],
+    "official_url":"https://www.uidai.gov.in/en/my-aadhaar/update-aadhaar.html","authority":"Unique Identification Authority of India (UIDAI)","dependencies":[],"last_verified":"2026-08-27","source":"UIDAI","verification_status":"verified","complexity":"Moderate"
+  },
+  {
+    "id":"voter-address-shift","name":"Shift Voter Registration","description":"Shift an existing electoral-roll entry to the new residence.","life_events":["moving"],
+    "conditions":[{"fact":"voter_registered","op":"eq","value":true}],
+    "documents":["Address proof","Existing voter/EPIC details"],
+    "steps":["Open the official Voter Service Portal.","Use Form 8 for shifting of residence.","Provide the new residence and required address proof.","Track the application through the voter portal."],
+    "official_url":"https://voters.eci.gov.in/","authority":"Election Commission of India","dependencies":[],"last_verified":"2026-08-27","source":"ECI","verification_status":"verified","complexity":"Moderate"
+  },
+  {
+    "id":"vehicle-registration-address","name":"Update Vehicle Registration Address","description":"Update the registered owner's residential address for a vehicle.","life_events":["moving"],
+    "conditions":[{"fact":"owns_vehicle","op":"eq","value":true}],
+    "documents":["Registration Certificate","Proof of new address","Valid insurance","Pollution certificate"],
+    "steps":["Open the official Parivahan service.","Locate the vehicle registration address-change service/Form 33 flow.","Submit the required vehicle and address documents.","Pay applicable fees and retain the acknowledgement."],
+    "official_url":"https://parivahan.gov.in/parivahan/en/content/download-forms","authority":"Ministry of Road Transport & Highways","dependencies":[],"last_verified":"2026-08-27","source":"Parivahan Sewa","verification_status":"verified","complexity":"Moderate"
+  },
+  {
+    "id":"voter-registration-18","name":"Register as a Voter","description":"Apply for inclusion in the electoral roll after becoming eligible to vote.","life_events":["turning_18"],
+    "conditions":[{"fact":"age","op":"gte","value":18},{"fact":"voter_registered","op":"eq","value":false}],
+    "documents":["Age/date-of-birth proof","Residence proof"],
+    "steps":["Open the official Voter Service Portal.","Choose Form 6 for new voter registration.","Provide the requested personal and residence details.","Submit and track the application."],
+    "official_url":"https://voters.eci.gov.in/","authority":"Election Commission of India","dependencies":[],"last_verified":"2026-08-27","source":"ECI","verification_status":"verified","complexity":"Moderate"
+  },
+  {
+    "id":"aadhaar-lost","name":"Recover / Access Aadhaar","description":"Use UIDAI's official services when the physical Aadhaar document is unavailable.","life_events":["lost_document"],
+    "conditions":[{"fact":"lost_document_type","op":"eq","value":"aadhaar"}],
+    "documents":["Aadhaar-linked mobile access where required"],
+    "steps":["Open the official UIDAI website.","Use the available Aadhaar retrieval or download service.","Complete the requested identity verification."],
+    "official_url":"https://www.uidai.gov.in/en/","authority":"UIDAI","dependencies":[],"last_verified":"2026-08-27","source":"UIDAI","verification_status":"verified","complexity":"Low"
+  },
+  {
+    "id":"epic-replacement","name":"Replace Lost Voter ID (EPIC)","description":"Request replacement of a lost EPIC through the electoral services system.","life_events":["lost_document"],
+    "conditions":[{"fact":"lost_document_type","op":"eq","value":"voter_id"}],
+    "documents":["Police report/complaint where applicable","Existing electoral-roll details"],
+    "steps":["Open the official Voter Service Portal.","Use Form 8 for replacement of EPIC.","Submit the requested details and supporting material.","Track the application online."],
+    "official_url":"https://voters.eci.gov.in/","authority":"Election Commission of India","dependencies":[],"last_verified":"2026-08-27","source":"ECI","verification_status":"verified","complexity":"Low"
+  },
+  {
+    "id":"marriage-registration","name":"Marriage Registration","description":"Prototype placeholder for marriage registration. The exact authority and process depend on jurisdiction and applicable law.","life_events":["married"],
+    "conditions":[{"fact":"marriage_state","op":"exists"}],
+    "documents":["Jurisdiction-specific documents — verify with the competent authority"],
+    "steps":["Determine the competent state/local registration authority.","Verify the applicable law and document list.","Submit the application through the verified government channel."],
+    "official_url":null,"authority":"Jurisdiction-specific government authority","dependencies":[],"last_verified":null,"source":"UNVERIFIED PROTOTYPE DATA","verification_status":"placeholder","complexity":"Unknown"
+  },
+  {
+    "id":"marriage-name-address-docs","name":"Review Identity Documents After Marriage","description":"Review whether identity records require updates following a change in personal details.","life_events":["married"],
+    "conditions":[{"fact":"changed_name","op":"eq","value":true}],
+    "documents":["Marriage certificate or other accepted supporting document — verify per service"],
+    "steps":["List identity records whose personal details changed.","Use each authority's official update process.","Do not submit documents until the authority's current requirements are verified."],
+    "official_url":null,"authority":"Multiple authorities","dependencies":[],"last_verified":null,"source":"UNVERIFIED PROTOTYPE DATA","verification_status":"placeholder","complexity":"Unknown"
+  }
+]

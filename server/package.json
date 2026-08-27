@@ -1,0 +1,4 @@
+{
+  "name":"sarkar-lens-server","type":"module","scripts":{"dev":"node --watch src/index.js","start":"node src/index.js"},
+  "dependencies":{"cors":"^2.8.5","express":"^5.1.0","better-sqlite3":"^12.2.0","zod":"^4.0.17"}
+}
