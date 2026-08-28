@@ -3,7 +3,7 @@ import {createRoot} from 'react-dom/client';
 import {ArrowRight,CheckCircle2,ChevronRight,ExternalLink,ShieldCheck,AlertTriangle,RotateCcw} from 'lucide-react';
 import './styles.css';
 
-const API='http://localhost:4000/api';
+const API='https://sarkar-lens.onrender.com';
 const statusLabels={not_started:'Not started',in_progress:'In progress',completed:'Completed',not_applicable:'Not applicable'};
 
 function App(){
