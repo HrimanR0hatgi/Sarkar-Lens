@@ -28,7 +28,7 @@ npm run dev
 
 Open `http://localhost:5173`.
 
-The API runs at `http://localhost:4000`.
+The API runs at `https://sarkar-lens.onrender.com`.
 
 ## Demo
 
